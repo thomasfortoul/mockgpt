@@ -1,0 +1,36 @@
+
+
+<style>
+/* 1) Reset default page margins/padding */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;             /* so 100% heights inside will work */
+}
+
+/* 2) Make your chat container bleed to all edges */
+.chat-container {
+  position: absolute;       /* or fixed if you want it always in view */
+  top: 0;
+  left: 0;
+  width: 100vw;             /* full viewport width */
+  height: 100vh;            /* full viewport height */
+  box-sizing: border-box;   /* so padding/borders don’t push it smaller */
+  
+  /* 3) Cover with your screenshot, no gaps */
+  background-image: url('interfaceScreenshot.png');
+  background-size: cover;       /* fill and crop as needed */
+  background-position: center;  /* center the crop */
+  background-repeat: no-repeat; /* don’t tile */
+  
+  overflow: hidden;         /* hide any overflow from child elements */
+  padding: 0;               /* ensure you haven’t added padding here */
+  margin: 0;                /* ditto on margins */
+}
+
+</style><!-- HTML -->
+<div class="chat-container">
+  <!-- your overlaid bubbles go here -->
+  <div class="bubble user" style="top:12%; right:8%;">Hi there!</div>
+  <div class="bubble bot"  style="top:20%; left:8%;">How can I help?</div>
+</div>

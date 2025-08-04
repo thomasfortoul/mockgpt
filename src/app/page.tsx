@@ -53,16 +53,18 @@ export default function Home() {
   };
 
   return (
-    <div className="flex h-screen bg-gray-900 text-white">
+    <div className="relative z-0 flex h-full w-full overflow-hidden">
       <Sidebar />
-      <div className="flex flex-col flex-1">
+      <div className="relative flex h-full max-w-full flex-1 flex-col overflow-hidden">
         <Header onDownload={handleDownload} />
-        <ChatWindow
-          ref={chatWindowRef}
-          messages={messages}
-          onDeleteMessage={handleDeleteMessage}
-          onEditMessage={handleEditMessage}
-        />
+        <main className="flex-1 overflow-y-auto">
+          <ChatWindow
+            ref={chatWindowRef}
+            messages={messages}
+            onDeleteMessage={handleDeleteMessage}
+            onEditMessage={handleEditMessage}
+          />
+        </main>
         <ChatInput onSendMessage={handleSendMessage} />
       </div>
     </div>
